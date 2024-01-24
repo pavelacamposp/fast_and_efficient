@@ -9,8 +9,8 @@ from third_party import inputs
 import threading
 import time
 
-from src.convex_mpc_controller.locomotion_controller import ControllerMode
-from src.convex_mpc_controller.locomotion_controller import GaitType
+from fast_and_efficient.src.convex_mpc_controller.locomotion_controller import ControllerMode
+from fast_and_efficient.src.convex_mpc_controller.locomotion_controller import GaitType
 
 FLAGS = flags.FLAGS
 MAX_ABS_VAL = 32768

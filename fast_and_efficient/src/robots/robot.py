@@ -5,10 +5,10 @@ from typing import Any
 from typing import Optional
 from typing import Tuple
 
-from src.robots import kinematics
-from src.robots.motors import MotorCommand
-from src.robots.motors import MotorControlMode
-from src.robots.motors import MotorGroup
+from fast_and_efficient.src.robots import kinematics
+from fast_and_efficient.src.robots.motors import MotorCommand
+from fast_and_efficient.src.robots.motors import MotorControlMode
+from fast_and_efficient.src.robots.motors import MotorGroup
 
 
 class Robot:

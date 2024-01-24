@@ -5,10 +5,10 @@ from typing import Any
 from typing import Sequence
 from typing import Tuple
 
-from src.robots.motors import MotorControlMode
-from src.robots.motors import MotorGroup
-from src.robots.motors import MotorModel
-from src.robots.robot import Robot
+from fast_and_efficient.src.robots.motors import MotorControlMode
+from fast_and_efficient.src.robots.motors import MotorGroup
+from fast_and_efficient.src.robots.motors import MotorModel
+from fast_and_efficient.src.robots.robot import Robot
 
 
 class A1(Robot):

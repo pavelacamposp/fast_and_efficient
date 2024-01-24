@@ -12,8 +12,9 @@ import numpy as np
 import pybullet as p  # pytype: disable=import-error
 import sys
 
-from src.robots.motors import MotorCommand
-from src.convex_mpc_controller import gait_generator as gait_generator_lib
+from fast_and_efficient.src.robots.motors import MotorCommand
+from fast_and_efficient.src.convex_mpc_controller import (
+  gait_generator as gait_generator_lib)
 
 try:
   import mpc_osqp as convex_mpc  # pytype: disable=import-error

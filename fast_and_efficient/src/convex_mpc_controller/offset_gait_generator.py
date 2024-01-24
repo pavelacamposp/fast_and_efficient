@@ -5,7 +5,7 @@ A gait generator that computes leg states based on sinusoids.
 import numpy as np
 from typing import Any, Sequence
 
-from src.convex_mpc_controller import gait_generator
+from fast_and_efficient.src.convex_mpc_controller import gait_generator
 LegState = gait_generator.LegState
 
 

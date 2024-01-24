@@ -7,16 +7,20 @@ import scipy
 import pybullet
 from pybullet_utils import bullet_client
 from typing import Tuple
+import os
 
-from src.robots.motors import MotorControlMode
-from src.robots import a1
-from src.robots import a1_robot
-from src.robots import gamepad_reader
-from src.robots.motors import MotorCommand
-from src.convex_mpc_controller import com_velocity_estimator
-from src.convex_mpc_controller import raibert_swing_leg_controller as swing_controller
-from src.convex_mpc_controller import torque_stance_leg_controller_mpc as stance_controller_mpc
-from src.convex_mpc_controller import offset_gait_generator
+from fast_and_efficient.src.robots.motors import MotorControlMode
+from fast_and_efficient.src.robots import a1
+from fast_and_efficient.src.robots import a1_robot
+from fast_and_efficient.src.robots import gamepad_reader
+from fast_and_efficient.src.robots.motors import MotorCommand
+from fast_and_efficient.src.convex_mpc_controller import (
+  com_velocity_estimator)
+from fast_and_efficient.src.convex_mpc_controller import (
+  raibert_swing_leg_controller as swing_controller)
+from fast_and_efficient.src.convex_mpc_controller import (
+  torque_stance_leg_controller_mpc as stance_controller_mpc)
+from fast_and_efficient.src.convex_mpc_controller import offset_gait_generator
 
 
 def get_gamepad_desired_speed_fn(gamepad):
@@ -63,7 +67,13 @@ class GaitChangeEnv(gym.Env):
       p = bullet_client.BulletClient(connection_mode=pybullet.DIRECT)
 
     p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 0)
-    p.setAdditionalSearchPath('src/data')
+
+    # Calculate the absolute path to the data directory
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    parent_dir = os.path.dirname(current_dir)
+    data_path = os.path.join(parent_dir, 'data')
+
+    p.setAdditionalSearchPath(data_path)
 
     self.pybullet_client = p
     if use_real_robot or use_gamepad_speed_command:

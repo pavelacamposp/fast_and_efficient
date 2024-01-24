@@ -2,7 +2,8 @@
 from ml_collections import ConfigDict
 import numpy as np
 
-from src.convex_mpc_controller import gait_generator as gait_generator_lib
+from fast_and_efficient.src.convex_mpc_controller import (
+  gait_generator as gait_generator_lib)
 LegState = gait_generator_lib.LegState
 
 

@@ -4,10 +4,13 @@ from absl import flags
 
 import time
 
-from src.convex_mpc_controller import locomotion_controller
-from src.convex_mpc_controller.locomotion_controller import ControllerMode
-from src.convex_mpc_controller.locomotion_controller import GaitType
-from src.worlds import plane_world, slope_world, stair_world, uneven_world
+from fast_and_efficient.src.convex_mpc_controller import locomotion_controller
+from fast_and_efficient.src.convex_mpc_controller.locomotion_controller import (
+  ControllerMode)
+from fast_and_efficient.src.convex_mpc_controller.locomotion_controller import (
+  GaitType)
+from fast_and_efficient.src.worlds import (
+  plane_world, slope_world, stair_world, uneven_world)
 
 flags.DEFINE_string("logdir", "logs", "where to log trajectories.")
 flags.DEFINE_bool("use_real_robot", False,

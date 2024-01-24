@@ -12,10 +12,11 @@ import pybullet
 from pybullet_utils import bullet_client
 import time
 from typing import Tuple
+import os
 
-from src.robots import a1
-from src.robots import a1_robot
-from src.robots.motors import MotorCommand
+from fast_and_efficient.src.robots import a1
+from fast_and_efficient.src.robots import a1_robot
+from fast_and_efficient.src.robots.motors import MotorCommand
 
 flags.DEFINE_bool('use_real_robot', False, 'whether to use real robot.')
 FLAGS = flags.FLAGS
@@ -49,7 +50,13 @@ def main(_):
     p = bullet_client.BulletClient(connection_mode=pybullet.DIRECT)
   else:
     p = bullet_client.BulletClient(connection_mode=pybullet.GUI)
-  p.setAdditionalSearchPath('src/data')
+
+  # Calculate the absolute path to the data directory
+  current_dir = os.path.dirname(os.path.realpath(__file__))
+  parent_dir = os.path.dirname(current_dir)
+  data_path = os.path.join(parent_dir, 'data')
+
+  p.setAdditionalSearchPath(data_path)
   p.loadURDF("plane.urdf")
   p.setGravity(0.0, 0.0, -9.8)
 

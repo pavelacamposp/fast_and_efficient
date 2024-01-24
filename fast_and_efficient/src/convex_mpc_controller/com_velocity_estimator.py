@@ -3,9 +3,11 @@ import numpy as np
 import pybullet as p
 from typing import Any, Sequence
 
-from src.robots import a1_robot
-from src.convex_mpc_controller.gait_generator import LegState
-from src.utilities.moving_window_filter import MovingWindowFilter
+from fast_and_efficient.src.robots import a1_robot
+from fast_and_efficient.src.convex_mpc_controller.gait_generator import (
+  LegState)
+from fast_and_efficient.src.utilities.moving_window_filter import (
+  MovingWindowFilter)
 
 _DEFAULT_WINDOW_SIZE = 20
 

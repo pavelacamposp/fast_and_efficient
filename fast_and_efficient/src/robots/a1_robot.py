@@ -6,10 +6,10 @@ import time
 from typing import Any
 from typing import Tuple
 
-from src.robots import a1
-from src.robots import a1_robot_state_estimator
-from src.robots.motors import MotorControlMode
-from src.robots.motors import MotorCommand
+from fast_and_efficient.src.robots import a1
+from fast_and_efficient.src.robots import a1_robot_state_estimator
+from fast_and_efficient.src.robots.motors import MotorControlMode
+from fast_and_efficient.src.robots.motors import MotorCommand
 
 # Constants for analytical FK/IK
 COM_OFFSET = -np.array([0.012731, 0.002186, 0.000515])

@@ -6,8 +6,9 @@ import math
 import numpy as np
 from typing import Any, Mapping, Sequence, Tuple
 
-from src.robots.motors import MotorCommand
-from src.convex_mpc_controller import gait_generator as gait_generator_lib
+from fast_and_efficient.src.robots.motors import MotorCommand
+from fast_and_efficient.src.convex_mpc_controller import (
+  gait_generator as gait_generator_lib)
 
 # The position correction coefficients in Raibert's formula.
 _KP = np.array([0.01, 0.01, 0.01]) * 0.
