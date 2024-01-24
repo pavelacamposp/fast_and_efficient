@@ -5,7 +5,7 @@ from absl import flags
 from absl import logging
 from datetime import datetime
 import numpy as np
-import gym
+import gymnasium as gym
 import os
 import pickle
 import time

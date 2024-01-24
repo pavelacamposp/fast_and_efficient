@@ -1,6 +1,6 @@
 """A gym environment that changes the takes in gait schedule commands."""
 from absl import logging
-import gym
+import gymnasium as gym
 import ml_collections
 import numpy as np
 import scipy
