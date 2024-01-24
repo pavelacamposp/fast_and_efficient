@@ -117,7 +117,7 @@ else:
   include_dirs += NP_DIRS
 
 sources = [
-    "src/convex_mpc_controller/mpc_osqp.cc",
+    "fast_and_efficient/src/convex_mpc_controller/mpc_osqp.cc",
     "third_party/osqp/src/auxil.c",
     "third_party/osqp/src/cs.c",
     "third_party/osqp/src/ctrlc.c",
@@ -232,7 +232,7 @@ print(find_packages('.'))
 
 setup(
     name='fast_and_efficient',
-    version='1.0.0',
+    version='1.0.0-standalone',
     description=
     'Convex MPC controller with python bindings for MPC using the osqp solver',
     long_description=
